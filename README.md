@@ -13,24 +13,28 @@ Plannify bringt dir:
 
 ## Was brauchst du?
 
-Bitte installiere:
+Installiert sein muss:
 
 - Docker Desktop
-- Git
 
 ---
 
 ## Los geht’s: Projekt starten
 
-### 1. Die Laravel .env Datei anlegen
+### 1. Backend Dependencies installieren
 
-Falls noch nicht vorhanden:
+```bash
+docker compose run --rm backend composer install
+```
+
+### 2. .env Datei erstellen
+
 
 ```bash
 cp .env.example .env
 ```
 
-Stelle sicher, dass in deiner `.env` Datei die Datenbank so eingestellt ist:
+Stelle sicher, dass in der `.env` Datei die Datenbank so eingestellt ist:
 
 ```env
 DB_CONNECTION=mysql
@@ -46,35 +50,26 @@ SESSION_DRIVER=file
 
 ---
 
-### 2. Container bauen und starten
+### 3. Laravel Application Key generieren
 
 ```bash
-docker compose down
+docker compose run --rm backend php artisan key:generate
+```
+
+---
+
+### 4. Container starten
+
+```bash
 docker compose up -d --build
 ```
 
 ---
 
-### 3. Composer-Abhängigkeiten installieren (falls nötig)
+### 5. Datenbank Migration ausführen
 
 ```bash
-docker compose exec backend composer install
-```
-
----
-
-### 4. Laravel Application Key generieren
-
-```bash
-docker compose exec backend php artisan key:generate
-```
-
----
-
-### 5. Datenbank-Migration ausführen
-
-```bash
-docker compose exec backend php artisan migrate
+docker compose run --rm backend php artisan migrate
 ```
 
 ---
