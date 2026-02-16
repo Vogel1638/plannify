@@ -115,8 +115,6 @@ docker compose down -v
 
 ---
 
-## Häufige Stolpersteine
-
 ### "could not find driver"
 
 Backend neu bauen:
