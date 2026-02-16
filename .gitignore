@@ -1,0 +1,49 @@
+# Laravel Framework
+/.phpunit.cache
+/bootstrap/ssr
+/public/build
+/public/hot
+/public/storage
+/resources/js/actions
+/resources/js/routes
+/resources/js/wayfinder
+/storage/*.key
+/storage/pail
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+
+# Dependencies (NICHT auf GitHub)
+/vendor
+/node_modules
+package-lock.json
+composer.lock
+
+# Logs (NICHT auf GitHub)
+npm-debug.log
+yarn-error.log
+*.log
+
+# IDE & Editor (NICHT auf GitHub)
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+/auth.json
+
+# Bruno API Testing (NICHT auf GitHub)
+/Plannify API v1/
+
+# OS generated files (NICHT auf GitHub)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
