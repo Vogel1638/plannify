@@ -22,16 +22,7 @@ Bitte installiere:
 
 ## Los geht’s: Projekt starten
 
-### 1. Repository klonen
-
-```bash
-git clone <repository-url>
-cd plannify
-```
-
----
-
-### 2. Die Laravel .env Datei anlegen
+### 1. Die Laravel .env Datei anlegen
 
 Falls noch nicht vorhanden:
 
@@ -55,7 +46,7 @@ SESSION_DRIVER=file
 
 ---
 
-### 3. Container bauen und starten
+### 2. Container bauen und starten
 
 ```bash
 docker compose down
@@ -64,7 +55,7 @@ docker compose up -d --build
 
 ---
 
-### 4. Composer-Abhängigkeiten installieren (falls nötig)
+### 3. Composer-Abhängigkeiten installieren (falls nötig)
 
 ```bash
 docker compose exec backend composer install
@@ -72,7 +63,7 @@ docker compose exec backend composer install
 
 ---
 
-### 5. Laravel Application Key generieren
+### 4. Laravel Application Key generieren
 
 ```bash
 docker compose exec backend php artisan key:generate
@@ -80,7 +71,7 @@ docker compose exec backend php artisan key:generate
 
 ---
 
-### 6. Datenbank-Migration ausführen
+### 5. Datenbank-Migration ausführen
 
 ```bash
 docker compose exec backend php artisan migrate
